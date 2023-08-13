@@ -36,6 +36,7 @@ export class ProductController {
     return this.productService.find(id);
   }
 
+  @UseGuards(JwtGuard)
   @Patch(':id')
   updateProduct(
     @Param('id') id: string,
